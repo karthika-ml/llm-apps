@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+crewai==0.28.8
+crewai_tools==0.1.6
+langchain_community==0.0.29
+=======
+streamlit
+langchain-community
+langchain-core
+langchain-openai
+openai
+>>>>>>> c116f1361bd275a2599bf7e44140fabe9418cabf

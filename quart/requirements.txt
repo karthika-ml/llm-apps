@@ -1,0 +1,24 @@
+# Azure SDK packages
+azure-storage-blob
+azure-cognitiveservices-speech
+azure-core
+azure-identity
+azure-monitor-opentelemetry
+azure-search-documents
+azure-storage-file-datalake
+
+# OpenTelemetry packages
+opentelemetry-instrumentation-aiohttp-client
+opentelemetry-instrumentation-asgi
+opentelemetry-instrumentation-httpx
+opentelemetry-instrumentation-openai
+
+# OpenAI SDK
+openai
+
+# Quart and related packages
+quart
+quart-cors
+
+# Custom modules (approaches, config, core, decorators, error, prepdocs, etc.)
+# These would be either included in the project directory or managed as a separate package.

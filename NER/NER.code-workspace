@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "NER",
+			"path": "."
+		},
+		{
+			"path": "../../Downloads/CustomNER - LoanAgreements"
+		}
+	],
+	"settings": {}
+}
