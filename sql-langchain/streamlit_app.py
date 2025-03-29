@@ -1,16 +1,21 @@
 import streamlit as st
+import dotenv
 from langchain_community.utilities import SQLDatabase
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import AzureOpenAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 import openai
+load_dotenv()
 
-openai.api_type = "azure"
-openai.model="gpt-35-turbo"
-openai.api_base = "https://sqlalmeda2.openai.azure.com/"
-openai.api_version = "2023-05-15"
-openai.api_key = "60436d3dcae2441bb9bd099bebcfa9e7"
+# Set OpenAI API configuration from environment variables
+openai.api_type = os.getenv("OPENAI_API_TYPE")
+openai.api_base = os.getenv("OPENAI_API_BASE")
+openai.api_version = os.getenv("OPENAI_API_VERSION")
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# Set model separately
+model = os.getenv("OPENAI_MODEL", "gpt-35-turbo")
 
 def connectDatabase(username, port, host, password, database):
     # global db
