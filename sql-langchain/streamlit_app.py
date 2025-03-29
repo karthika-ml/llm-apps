@@ -19,7 +19,7 @@ model = os.getenv("OPENAI_MODEL", "gpt-35-turbo")
 
 def connectDatabase(username, port, host, password, database):
     # global db
-    connection_string = 'mssql+pyodbc://intelli:Mar%402024@intelliswift.database.windows.net/intelli_db?driver=ODBC+Driver+18+for+SQL+Server&Encrypt=yes&TrustServerCertificate=no'
+    connection_string = 'mssql+pyodbc://xxxxxxx:Mar%402024@xxxxxxxx.database.windows.net/xxxxx?driver=ODBC+Driver+18+for+SQL+Server&Encrypt=yes&TrustServerCertificate=no'
     st.session_state.db = SQLDatabase.from_uri(connection_string)
 
 def runQuery(query):
@@ -29,7 +29,7 @@ def getDatabaseSchema():
     return st.session_state.db.get_usable_table_names() if st.session_state.db else "Please connect to database"
 
 
-connectDatabase(username='intelli',port='',host='intelliswift.database.windows.net',password='Mar@2024',database='intelli_db')
+connectDatabase(username='xxxxxx',port='',host='xxxxxx.database.windows.net',password='Mar@2024',database='xxxxxx')
 
 llm = AzureOpenAI(
     deployment_name="chatbot_1",  # Replace with your model deployment
@@ -164,11 +164,11 @@ for chat in st.session_state.chat:
 # Sidebar for database connection
 with st.sidebar:
     st.title('Connect to database')
-    st.text_input(label="Host", key="host", value="intelliswift.database.windows.net")
+    st.text_input(label="Host", key="host", value="xxxxxxxx.database.windows.net")
     st.text_input(label="Port", key="port", value=" ")
-    st.text_input(label="Username", key="username", value="intelli")
-    st.text_input(label="Password", key="password", value="Mar@2024", type="password")
-    st.text_input(label="Database", key="database", value="intelli_db")
+    st.text_input(label="Username", key="username", value="xxxxxxx")
+    st.text_input(label="Password", key="password", value="yyyyyy", type="password")
+    st.text_input(label="Database", key="database", value="xxxxxx")
     connectBtn = st.button("Connect")
 
 if connectBtn:
@@ -182,15 +182,3 @@ if connectBtn:
     st.success("Database connected")
 
 
-# connectDatabase(username='intelli',port='',host='intelliswift.database.windows.net',password='Mar@2024',database='intelli_db')
-# question_tp = "Show all records where the 'Admission_Type' is 'Emergency'."
-# query_tp = getQueryFromLLM(question_tp)
-# result_tp = runQuery(query_tp)
-# nlp_ans = getResponseForQueryResult(question_tp, query_tp, result_tp)
-# print('final_ans:',nlp_ans)
-
-# print(type(ans))
-# --------testing okay!------------
-# print(getDatabaseSchema())
-
-# getQueryFromLLM("Whose records correspond to requesting provider's NPI is '1234567890'")
