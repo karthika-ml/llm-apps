@@ -1,5 +1,5 @@
 **/.env
 ~/.streamlit/credentials.toml
 **/credentials.toml
-chatbot_projects/cus_support_chatbot/travel2.sqlite
-chatbot_projects/cus_support_chatbot/travel2.backup.sqlite
+**/cus_support_chatbot/travel2.sqlite
+**/cus_support_chatbot/travel2.backup.sqlite
